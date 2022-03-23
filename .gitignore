@@ -1,0 +1,5 @@
+.ijwb/
+bazel-bazel-grpc-demo-using-rules_proto_grpc
+bazel-bin
+bazel-out
+bazel-testlogs
