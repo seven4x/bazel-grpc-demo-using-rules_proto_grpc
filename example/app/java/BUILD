@@ -2,13 +2,13 @@ load("@rules_proto_grpc//java:defs.bzl", "java_grpc_library", "java_proto_compil
 
 java_grpc_library(
     name = "thing_java_grpc",
-    protos = ["@rules_proto_grpc//example/proto:thing_proto"],
+    protos = ["//example/proto:thing_proto"],
     visibility = ["//visibility:public"],
 )
 
 java_grpc_library(
     name = "greeter_java_grpc",
-    protos = ["@rules_proto_grpc//example/proto:greeter_grpc"],
+    protos = ["//example/proto:greeter_grpc"],
     visibility = ["//visibility:public"],
     deps = ["thing_java_grpc"],
 )

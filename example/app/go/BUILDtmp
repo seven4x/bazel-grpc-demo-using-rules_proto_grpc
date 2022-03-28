@@ -1,4 +1,5 @@
 load("@rules_proto_grpc//go:defs.bzl", "go_grpc_library", "go_proto_compile")
+load("@io_bazel_rules_go//go:def.bzl", "go_binary")
 
 go_grpc_library(
     name = "greeter_go_grpc",
@@ -7,4 +8,10 @@ go_grpc_library(
         "@rules_proto_grpc//example/proto:greeter_grpc",
         "@rules_proto_grpc//example/proto:thing_proto",
     ],
+    visibility = ["//visibility:public"],
+)
+
+go_binary(
+    name = "server",
+    srcs = ["server.go"],
 )
